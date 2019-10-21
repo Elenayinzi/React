@@ -1,0 +1,65 @@
+1.搭建出页面
+2.菜单栏,表格页面
+3.路由,跳转,导航,axios请求
+技术:
+核心架构:
+react16:react+react-router+redux+axios+babel+webpack
+    基本介绍:声明式编码;组件化编码;高效的DO Diff算法;单向数据流;
+    脚手架,yarn
+    生命周期:
+        getDefaultProps:初始化props属性
+        getInitialState:初始化当前组件状态
+        componentWillMount:组件加载之前调用的方法
+        render:渲染
+        componentDidMount:DOM插入完后调用
+        componentWillReceiveProps:属性传递时
+        shouldComponentUpdate:组件更新
+        componentWillUpdate:组件更新之前
+        componentDidUpdate:组件更新之后
+        componentWillUnmount:组件销毁
+router4.0
+redux
+中间件:
+Antd UI
+    基础组件
+    栅格
+    ETable自己
+axios请求
+map
+echarts
+公共机制封装:
+axios请求
+api
+错误拦截
+权限,菜单封装
+日期,金额,手机号封装
+loading 分页 mock
+form
+header
+footer
+
+使用npm安装react项目:
+npm install -g create-react-app
+create-react-app my-app
+cd my-app
+npm start
+
+使用yarn包工具:
+yarn init
+yarn add
+yarn remove
+yarn install/yarn
+
+
+项目主页工程搭建:
+1.基础插件的安装,less文件加载配置
+    react-router-dom
+    axios
+    antD
+    暴露webpack配置文件
+    安装less-loader
+    修改less-loader
+2.项目主页结构开发
+3.菜单组件开发
+4.头部组件开发
+5.底部组件开发
