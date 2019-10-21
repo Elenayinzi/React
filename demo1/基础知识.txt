@@ -63,3 +63,7 @@ yarn install/yarn
 3.菜单组件开发
 4.头部组件开发
 5.底部组件开发
+
+
+git遇到的问题:
+git config  --globle   http.sslVerify "false" 
