@@ -67,3 +67,6 @@ yarn install/yarn
 
 git遇到的问题:
 git config  --globle   http.sslVerify "false" 
+
+babel插件:
+babel-plugin-import:按需加载
