@@ -70,3 +70,20 @@ git config  --globle   http.sslVerify "false"
 
 babel插件:
 babel-plugin-import:按需加载
+
+jsonp安装:
+yarn add jsonp --save
+
+路由:
+react-router-dom:基于浏览器的yarn add react-router-dom
+组件化,不用进行路由配置
+browerRouter:地址中无#
+HashRouter:地址中有#
+link(超链接:to),navlink(菜单链接):动态传参数-/路径/:number;获取参数this.props.match.params.number
+<Link to="/three/:number"></Link>
+switch:
+<Switch>放多个路由</Switch>
+Route属性:path,exact,component,render
+<Route/>
+redirect:重定向
+<Redirect to=""/>

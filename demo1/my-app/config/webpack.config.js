@@ -45,10 +45,8 @@ const imageInlineSizeLimit = parseInt(
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
 // style files regexes
-const cssRegex = /\.css$/;
-const cssModuleRegex = /\.module\.css$/;
-const lessRegex = /\.less$/;
-const lessModuleRegex = /\.module\.less$/;
+const cssRegex = /\.(css|less)$/;
+const cssModuleRegex = /\.module\.(css|less)$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
@@ -92,7 +90,16 @@ module.exports = function(webpackEnv) {
       },
       {
         loader: require.resolve('css-loader'),
-        options: cssOptions,
+        options: cssOptions
+      },
+      {
+        loader: require.resolve('less-loader'),
+        options: {
+            modifyVars: {
+                "primary-color": "#f9c700"
+            },
+            javascriptEnabled: true
+        }
       },
       {
         // Options for PostCSS as we reference these options twice
@@ -385,6 +392,7 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
+                    //["import",{"libraryName":"antd", "libraryDirectory": "lib","style":"true"}],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
@@ -433,24 +441,6 @@ module.exports = function(webpackEnv) {
                 sourceMaps: false,
               },
             },
-            {
-                test: lessRegex,
-                exclude: lessModuleRegex,
-                use: getStyleLoaders({
-                  importLoaders: 1,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                }),
-                sideEffects: true,
-              },
-              {
-                test: lessModuleRegex,
-                use: getStyleLoaders({
-                  importLoaders: 1,
-                  modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                })
-            },
             // "postcss" loader applies autoprefixer to our CSS.
             // "css" loader resolves paths in CSS and adds assets as dependencies.
             // "style" loader turns CSS into JS modules that inject <style> tags.
@@ -463,7 +453,7 @@ module.exports = function(webpackEnv) {
               exclude: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
-                sourceMap: isEnvProduction && shouldUseSourceMap,
+                sourceMap: isEnvProduction && shouldUseSourceMap
               }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -490,7 +480,7 @@ module.exports = function(webpackEnv) {
               exclude: sassModuleRegex,
               use: getStyleLoaders(
                 {
-                  importLoaders: 2,
+                  importLoaders: 3,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
                 'sass-loader'
@@ -507,7 +497,7 @@ module.exports = function(webpackEnv) {
               test: sassModuleRegex,
               use: getStyleLoaders(
                 {
-                  importLoaders: 2,
+                  importLoaders: 3,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,
