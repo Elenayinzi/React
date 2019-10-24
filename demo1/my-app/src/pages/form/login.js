@@ -1,22 +1,27 @@
 import React from "react";
+import axios from '../../axios/index'
 import { Card, Form, Input, Button, message, Icon, Checkbox } from "antd";
 const FormItem = Form.Item;
 class FormLogin extends React.Component{
 
     handleSubmit = ()=>{
         let userInfo = this.props.form.getFieldsValue();
-        this.props.form.validateFields((err,values)=>{
-            if(!err){
-                message.success(`${userInfo.userName} 恭喜你，您通过本次表单组件学习，当前密码为：${userInfo.userPwd}`)
-            }
-        })
+        console.log(`${userInfo.userName}`);
+        console.log(`${userInfo.userPwd}`);
+        
+
+        // this.props.form.validateFields((err,values)=>{
+        //     if(!err){
+        //         message.success(`${userInfo.userName} 恭喜你，您通过本次表单组件学习，当前密码为：${userInfo.userPwd}`)
+        //     }
+        // })
     }
 
     render(){
         const { getFieldDecorator } = this.props.form;
         return (
             <div>
-                <Card title="登录行内表单">
+                {/* <Card title="登录行内表单">
                     <Form layout="inline">
                         <FormItem>
                             <Input placeholder="请输入用户名"/>
@@ -28,20 +33,20 @@ class FormLogin extends React.Component{
                             <Button type="primary">登录</Button>
                         </FormItem>
                     </Form>
-                </Card>
+                </Card> */}
                 <Card title="登录水平表单" style={{marginTop:10}}>
                     <Form style={{width:300}}>
                         <FormItem>
                             {
                                 getFieldDecorator('userName',{
-                                    initialValue:'',
+                                    initialValue:'admin',
                                     rules:[
                                         {
                                             required:true,
                                             message:'用户名不能为空'
                                         },
                                         {
-                                            min:5,max:10,
+                                            min:5,max:20,
                                             message:'长度不在范围内'
                                         },
                                         {
@@ -57,8 +62,13 @@ class FormLogin extends React.Component{
                         <FormItem>
                             {
                                 getFieldDecorator('userPwd', {
-                                    initialValue: '',
-                                    rules: []
+                                    initialValue: 'qy2019',
+                                    rules: [
+                                        {
+                                            required:true,
+                                            message:'密码不能为空'
+                                        }
+                                    ]
                                 })(
                                     <Input prefix={<Icon type="lock" />} type="password" placeholder="请输入密码" />
                                 )
