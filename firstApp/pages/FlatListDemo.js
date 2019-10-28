@@ -14,7 +14,6 @@ import {
   View,
   Text,
   StatusBar,
-  Button
 } from 'react-native';
 
 import {
@@ -24,10 +23,9 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 type Props = {};
-const App: () => React$Node = () => {
+const FlatListDemo: () => React$Node = () => {
   return (
     <>
-      const { navigation } = this.props;
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -41,10 +39,6 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-                <Button title={"FlatListDemo"}
-                    onPress={ () => {
-                        navigation.navigate("FlatListDemo")
-                    }}/>
             </View>
             <LearnMoreLinks />
           </View>
@@ -93,4 +87,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default FlatListDemo;
