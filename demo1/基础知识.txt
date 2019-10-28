@@ -1,20 +1,17 @@
-1.搭建出页面
-2.菜单栏,表格页面
-3.路由,跳转,导航,axios请求
-技术:
 核心架构:
 react16:react+react-router+redux+axios+babel+webpack
     基本介绍:声明式编码;组件化编码;高效的DO Diff算法;单向数据流;
     脚手架,yarn
-    生命周期:
+    生命周期:mounting创建时;updating更新时;unmounting卸载时
         getDefaultProps:初始化props属性
         getInitialState:初始化当前组件状态
-        componentWillMount:组件加载之前调用的方法
+        componentWillMount:组件加载之前调用的方法(不安全的方法)改为了componentDidMount
         render:渲染
-        componentDidMount:DOM插入完后调用
-        componentWillReceiveProps:属性传递时
+        componentDidMount:DOM插入完后调用(组件装载完成后)
+        componentWillReceiveProps:属性传递时(不安全的方法)改为了getDerivedStateFormProps()
         shouldComponentUpdate:组件更新
-        componentWillUpdate:组件更新之前
+        getSnapshotBeforeUpdate()
+        componentWillUpdate:组件更新之前(不安全的方法)改为了componentDidUpdate
         componentDidUpdate:组件更新之后
         componentWillUnmount:组件销毁
 router4.0
@@ -37,6 +34,20 @@ loading 分页 mock
 form
 header
 footer
+路由:
+    react-router-dom:基于浏览器的yarn add react-router-dom
+    组件化,不用进行路由配置
+    browerRouter:地址中无#
+    HashRouter:地址中有#
+    link(超链接:to),navlink(菜单链接):动态传参数-/路径/:number;获取参数this.props.match.params.number
+    <Link to="/three/:number"></Link>
+    switch:
+    <Switch>放多个路由</Switch>
+    Route属性:path,exact,component,render
+    <Route/>
+    redirect:重定向
+    <Redirect to=""/>
+
 
 使用npm安装react项目:
 npm install -g create-react-app
@@ -49,7 +60,6 @@ yarn init
 yarn add
 yarn remove
 yarn install/yarn
-
 
 项目主页工程搭建:
 1.基础插件的安装,less文件加载配置
@@ -74,20 +84,3 @@ babel-plugin-import:按需加载
 
 jsonp安装:
 yarn add jsonp --save
-
-路由:
-react-router-dom:基于浏览器的yarn add react-router-dom
-组件化,不用进行路由配置
-browerRouter:地址中无#
-HashRouter:地址中有#
-link(超链接:to),navlink(菜单链接):动态传参数-/路径/:number;获取参数this.props.match.params.number
-<Link to="/three/:number"></Link>
-switch:
-<Switch>放多个路由</Switch>
-Route属性:path,exact,component,render
-<Route/>
-redirect:重定向
-<Redirect to=""/>
-
-
-https://travel-platform-api-qa.hzqykeji.com/login

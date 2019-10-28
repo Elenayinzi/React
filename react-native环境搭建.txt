@@ -1,0 +1,58 @@
+1.安装node.js
+2.安装react native command line
+    安装npm install -g react-native-cli
+    react-native --help
+    初始化一个项目:react-native init FirstApp
+    运行ios项目:
+        react-native run-ios
+        -or-
+         Open firstApp\ios\firstApp.xcodeproj in Xcode or run "xed -b ios"
+    运行android项目:
+         Have an Android emulator running (quickest way to get started), or a device connected.
+         cd E:\React\firstApp && react-native run-android
+3.android studio(windows)/xcode(mac)
+
+执行react-native start 启动包服务器
+http://localhost:8081/index.android.bundle?platform=android  检查是否成功
+执行命令：nox_adb.exe connect 127.0.0.1:62001，连接模拟器
+run app 运行项目
+
+react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+
+es6新特性:
+类class
+模块化module:export,import
+箭头函数()=>
+模板字符串${}
+解构赋值const {name,age} = obj
+延展操作符...
+对象属性简写:对象中可以不设置属性名
+promise:异步编程
+let与const:块级作用域
+es7:
+includes()类似indexOf()
+指数操作符**类似Math.pow(..)
+es8:
+async/await:异步函数
+Object.values()返回Object自身的属性值不包括继承的
+Object.entries()返回一个对象自身可枚举属性的键值对数组
+String padding
+函数参数列表结尾允许逗号
+Object.getOwnPropertyDescriptors()
+
+react基础语法:
+JSX语法
+组件结构
+组件生命周期
+props
+state
+自定义组件
+this.props.children遍历对象
+prop-types
+defaultProps
+ref属性(获取真实的DOM节点)
+
+react-native布局方式:
+flexbox布局:flexDirection;flexWrap;justifyContent;
+安卓长宽是dp,字体是sp,ios单位是pt
