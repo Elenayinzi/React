@@ -14,13 +14,25 @@ react16:react+react-router+redux+axios+babel+webpack
         componentWillUpdate:组件更新之前(不安全的方法)改为了componentDidUpdate
         componentDidUpdate:组件更新之后
         componentWillUnmount:组件销毁
-router4.0
+router4.0路由:
+    react-router-dom:基于浏览器的yarn add react-router-dom
+    组件化,不用进行路由配置
+    browerRouter:地址中无#
+    HashRouter:地址中有#
+    link(超链接:to),navlink(菜单链接):动态传参数-/路径/:number;获取参数this.props.match.params.number
+    <Link to="/three/:number"></Link>
+    switch:
+    <Switch>放多个路由</Switch>
+    Route属性:path,exact,component,render
+    <Route/>
+    redirect:重定向
+    <Redirect to=""/>
 redux
 中间件:
 Antd UI
     基础组件
     栅格
-    ETable自己
+    ETable
 axios请求
 map
 echarts
@@ -34,20 +46,19 @@ loading 分页 mock
 form
 header
 footer
-路由:
-    react-router-dom:基于浏览器的yarn add react-router-dom
-    组件化,不用进行路由配置
-    browerRouter:地址中无#
-    HashRouter:地址中有#
-    link(超链接:to),navlink(菜单链接):动态传参数-/路径/:number;获取参数this.props.match.params.number
-    <Link to="/three/:number"></Link>
-    switch:
-    <Switch>放多个路由</Switch>
-    Route属性:path,exact,component,render
-    <Route/>
-    redirect:重定向
-    <Redirect to=""/>
 
+项目主页工程搭建:
+1.基础插件的安装,less文件加载配置
+    yarn add react-router-dom
+    yarn add axios
+    yarn add antD
+    暴露webpack配置文件:yarn eject
+    安装less-loader: yarn add less-loader
+    修改less-loader:修改webpack.config.js
+2.项目主页结构开发
+3.菜单组件开发
+4.头部组件开发
+5.底部组件开发
 
 使用npm安装react项目:
 npm install -g create-react-app
@@ -60,27 +71,14 @@ yarn init
 yarn add
 yarn remove
 yarn install/yarn
-
-项目主页工程搭建:
-1.基础插件的安装,less文件加载配置
-    react-router-dom
-    axios
-    antD
-    暴露webpack配置文件
-    安装less-loader
-    修改less-loader
-2.项目主页结构开发
-3.菜单组件开发
-4.头部组件开发
-5.底部组件开发
-
+jsonp安装:
+yarn add jsonp --save
+babel插件:
+babel-plugin-import:按需加载
 
 git遇到的问题:
 git config  --global   http.sslVerify "false" 
 git config --system --unset credential.helper
 
-babel插件:
-babel-plugin-import:按需加载
 
-jsonp安装:
-yarn add jsonp --save
+

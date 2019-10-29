@@ -1,0 +1,78 @@
+es6新特性:
+    类class
+    模块化module:export,import
+    箭头函数()=>
+    模板字符串${}
+    解构赋值const {name,age} = obj
+    延展操作符...
+    对象属性简写:对象中可以不设置属性名
+    promise:异步编程
+    let与const:块级作用域
+es7:
+    includes()类似indexOf()
+    指数操作符**类似Math.pow(..)
+es8:
+    async/await:异步函数
+    Object.values()返回Object自身的属性值不包括继承的
+    Object.entries()返回一个对象自身可枚举属性的键值对数组
+    String padding
+    函数参数列表结尾允许逗号
+    Object.getOwnPropertyDescriptors()
+
+react基础语法:
+    JSX语法
+    组件结构
+    组件生命周期
+    props
+    state
+    自定义组件
+    this.props.children遍历对象
+    prop-types
+    defaultProps
+    ref属性(获取真实的DOM节点)
+
+react-native布局方式:
+flexbox布局:flexDirection;flexWrap;justifyContent;alignItems;alignSelf;flex;
+视图边框:bottom
+尺寸:安卓长宽是dp,字体是sp,ios单位是pt
+外边距margin
+内边距padding
+边缘
+定位
+
+高性能列表组件:
+flatList特性
+virtualizedList特性
+sectionList
+
+react-navigation导航器:
+5种导航器:
+createStackNavigator:普通导航栏
+    特有的方法:
+    push:导航到新的路由
+    pop:返回上一个页面
+    popToTop:跳转到最顶层页面
+    replace:用新路由替换当前路由
+    reset:擦除导航器状态并将其替换为多个操作的结果
+    dismiss:关闭当前栈
+createBottomTabNavigator:底部导航栏
+createMaterialTopTabNavigator:顶部导航栏
+createDrawerNavigator:抽屉效果,侧边滑出
+createSwitchNavigator:一次只能显示一个页面
+
+NavigationActions:Navigate;Back;set Params;Init
+StackActions:reset;replace;push;pop;PopToTop;
+
+导航器支持的属性:ref;onNavigationStateChange;screenProps;
+screen navigation prop(navigation):屏幕导航属性,屏幕之间的调度;
+    navigation: 
+        navigate(跳转界面);navigate({routeName,params,action,key})
+        state(获取当前屏幕的state);setParams(改变路由的params);
+        goBack()关闭当前屏幕;dispatch(向路由发送一个action);addListener(订阅导航生命周期的更新);
+        isFocused:true(标识屏幕获取了焦点);getParam(获取具有回退的特定参数);dangerouslyGetParent(返回父导航器);
+screen navigationOptions(navigationOptions):屏幕导航选项,定制导航器显示屏幕的方式(title,tab等)
+
+
+矢量图标:
+
+cocoapods:ios
