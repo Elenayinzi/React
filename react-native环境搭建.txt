@@ -21,10 +21,19 @@ run app 运行项目
 react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 
 安装导航:
-yarn add react-navigation
+主库:yarn add react-navigation
+主库依赖:
 yarn add react-native-gesture-handler
+yarn add react-native-reanimated
 #react-native link react-native-gesture-handler
+各导航组件库:
+yarn add react-navigation-stack
+yarn add react-native-screens
+yarn add react-navigation-drawer
+yarn add react-native-tabs
 
-react-navigation-stack
-react-native-screens
-react-native-reanimated
+ios配置:pod install
+
+android配置:react-native-gesture-handler
+
+

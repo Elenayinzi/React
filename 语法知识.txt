@@ -73,6 +73,10 @@ screen navigation prop(navigation):屏幕导航属性,屏幕之间的调度;
 screen navigationOptions(navigationOptions):屏幕导航选项,定制导航器显示屏幕的方式(title,tab等)
 
 
-矢量图标:
+矢量图标:react-native-vector-icons
+npm install --save react-native-vector-icons
+yarn add react-native-vector-icons
+https://github.com/oblador/react-native-vector-icons#installation 使用教程,ios和android有不同的配置方式
 
 cocoapods:ios
+
