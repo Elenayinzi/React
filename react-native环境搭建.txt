@@ -30,7 +30,7 @@ yarn add react-native-reanimated
 yarn add react-navigation-stack
 yarn add react-native-screens
 yarn add react-navigation-drawer
-yarn add react-native-tabs
+yarn add react-navigation-tabs
 
 ios配置:pod install
 

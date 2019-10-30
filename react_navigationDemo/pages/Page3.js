@@ -1,15 +1,28 @@
 import React from 'react'
 import { Button,View,Text,StyleSheet } from 'react-native'
+import { TextInput } from 'react-native-gesture-handler';
 
 export default class Page3 extends React.Component{
 
     render(){
         const {navigation} = this.props;
+        const {state, setParams} = navigation;
+        const {params} = state;
+        const showText = params&&params.mode==='edit'?'正在编辑':'编辑完成';
+
         return <View style={{flex:1,backgroundColor:"gray",paddingTop:30}}>
-            <Text>欢迎来到Page3</Text>
+            <Text style={styles.text}>欢迎来到Page3</Text>
+            <Text style={styles.showText}>{showText}</Text>
             <Button title={'Go Back'} onPress={()=>{
                 navigation.goBack();
             }}/>
+            <TextInput style={styles.input}
+                onChangeText={
+                    text=>{
+                        setParams({name: text});
+                    }
+                }
+            />
             <Button title={'Go page2'} onPress={()=>{
                 navigation.navigate('Page2');
             }}/>
@@ -21,5 +34,17 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 20,
         color: 'white'
+    },
+    showText: {
+        marginTop: 20,
+        fontSize: 20,
+        color:'red'
+    },
+    input: {
+       height: 50,
+       borderWidth:1,
+       marginTop: 10,
+       backgroundColor: '#2196F3',
+       color: 'white'
     }
 })

@@ -6,7 +6,7 @@ export default class Page1 extends React.Component{
     render(){
         const {navigation} = this.props;
         return <View style={{flex:1,backgroundColor:"gray",paddingTop:30}}>
-            <Text>欢迎来到Page1</Text>
+            <Text style={{color:'white',textAlign:'center',fontSize:14}}>欢迎来到Page1</Text>
             <Button title={'Go Back'} onPress={()=>{
                 navigation.goBack();
             }}/>

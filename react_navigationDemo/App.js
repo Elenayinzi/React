@@ -95,4 +95,6 @@
 
 import {AppStackNavigator} from './navigators/AppNavigators'
 import {createAppContainer} from 'react-navigation';
+import SwitchNavigator from './navigators/SwitchNavigator'
 export default createAppContainer(AppStackNavigator);
+//export default createAppContainer(SwitchNavigator);
